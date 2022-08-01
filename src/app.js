@@ -6,35 +6,29 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  var name = document.getElementById("name");
+  let pronoun = ["the", "our"];
+  let adj = ["great", "big"];
+  let noun = ["jogger", "racoon"];
+  let extensions = [".com", ".net", ".us", ".io"];
 
-  var pronoun = ["the", "our"];
-  var adj = ["great", "big"];
-  var noun = ["jogger", "racoon"];
-  var extensions = [".com", ".net", ".us", ".io"];
+  function getDomain(array1, array2, array3, array4) {
+    let output = [];
+    for (let i = 0; i < array1.length; i++) {
+      for (let j = 0; j < array2.length; j++) {
+        for (let k = 0; k < array3.length; k++) {
+          for (let l = 0; l < array4.length; l++) {
+            output.push(array1[i] + array2[j] + array3[k] + array4[l] + "<br>");
+          }
+        }
+      }
+    }
 
-  function getRandomPronoun(max) {
-    return Math.floor(Math.random() * max);
+    return output;
   }
-  function getRandomAdj(max) {
-    return Math.floor(Math.random() * max);
-  }
-  function getRandomNoun(max) {
-    return Math.floor(Math.random() * max);
-  }
-  function getRandomExtensions(max) {
-    return Math.floor(Math.random() * max);
-  }
-  var randomPronoun = getRandomPronoun(pronoun.length);
-  var randomAdj = getRandomAdj(adj.length);
-  var randomNoun = getRandomNoun(noun.length);
-  var randomExtensions = getRandomExtensions(extensions.length);
-
-  name.innerHTML =
-    pronoun[randomPronoun] +
-    adj[randomAdj] +
-    noun[randomNoun] +
-    extensions[randomExtensions];
-
-  console.log("pronoun");
+  document.getElementById("domainlist").innerHTML = getDomain(
+    pronoun,
+    adj,
+    noun,
+    extensions
+  );
 };
