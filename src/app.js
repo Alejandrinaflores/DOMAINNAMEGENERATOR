@@ -17,7 +17,7 @@ window.onload = function() {
       for (let j = 0; j < array2.length; j++) {
         for (let k = 0; k < array3.length; k++) {
           for (let l = 0; l < array4.length; l++) {
-            output.push(array1[i] + array2[j] + array3[k] + array4[l] + "<br>");
+            output.push("<br>" + array1[i] + array2[j] + array3[k] + array4[l]);
           }
         }
       }
